@@ -1,0 +1,318 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  background: #111;
+}
+
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #000;
+}
+
+.phone-frame {
+  width: 390px;
+  height: 844px;
+  border-radius: 40px;
+  background: #000;
+  border: 2px solid #444;
+  box-shadow: 0 0 0 8px #111;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.app-header {
+  position: relative;
+  background: #e11b22;
+  color: white;
+  padding: 12px 16px 32px;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.header-title {
+  margin: 0 auto;
+  font-weight: 700;
+}
+
+.header-wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -12px;
+  height: 32px;
+  background: #e11b22;
+  border-bottom-left-radius: 50% 80%;
+  border-bottom-right-radius: 50% 80%;
+}
+
+.app-main {
+  flex: 1;
+  padding: 24px 16px 12px;
+  background: #000;
+  color: #fff;
+  overflow-y: auto;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.list-section {
+  margin-bottom: 16px;
+}
+
+.card {
+  background: #333;
+  border-radius: 16px;
+  padding: 12px 12px 4px;
+}
+
+.empty-state {
+  font-size: 13px;
+  color: #bbb;
+  padding: 8px 4px 12px;
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  padding: 8px 4px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.item-row:last-child {
+  border-bottom: none;
+}
+
+.item-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  margin-right: 10px;
+}
+
+.item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.item-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.item-meta {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.pill-button {
+  border-radius: 999px;
+  padding: 6px 14px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #fff;
+  color: #111;
+}
+
+.pill-button.primary {
+  background: #0078b5;
+  color: #fff;
+}
+
+.pill-button.pill-secondary {
+  background: #444;
+  color: #fff;
+}
+
+.add-section {
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.add-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.input {
+  flex: 1;
+  border-radius: 999px;
+  border: none;
+  padding: 8px 12px;
+  background: #242424;
+  color: #fff;
+  font-size: 13px;
+}
+
+.input::placeholder {
+  color: #777;
+}
+
+.price-input {
+  flex: 0 0 70px;
+  text-align: center;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #60a5fa;
+  font-size: 12px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.bill-section {
+  margin-bottom: 72px;
+}
+
+.bill-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.bill-label {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.bill-value {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.bill-breakdown {
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 12px;
+}
+
+.bill-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.bill-user {
+  background: #222;
+  border-radius: 12px;
+  padding: 8px 8px 6px;
+  margin-top: 8px;
+}
+
+.bill-user-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: #0078b5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.bill-user-info {
+  margin-left: 8px;
+}
+
+.bill-user-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.bill-user-amount {
+  font-size: 12px;
+  color: #ddd;
+}
+
+.bill-items {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0;
+  font-size: 12px;
+}
+
+.bill-items li {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 0;
+}
+
+.app-footer {
+  padding: 10px 16px 20px;
+  display: flex;
+  gap: 12px;
+  background: #000;
+  border-top: 1px solid #222;
+}
+
+.footer-button {
+  flex: 1;
+  border-radius: 999px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.footer-button.secondary {
+  background: #fff;
+  color: #111;
+}
+
+.footer-button.primary {
+  background: #0078b5;
+  color: #fff;
+}
+
+.loading-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+
