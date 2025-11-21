@@ -12,4 +12,3 @@ DATABASE_URL = os.getenv(
 
 APP_NAME = "HEB Shared List & Bill Split API"
 
-
