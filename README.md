@@ -1,3 +1,6 @@
+**THIS PROJECT NEEDS A LOT OF WORK! MODIFY README AND MAKE SURE PROJECT WORKS AND FUNCTION**
+
+
 # H‑E‑B Shared List & Bill Split
 
 ## Running locally
