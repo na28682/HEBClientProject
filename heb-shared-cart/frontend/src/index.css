@@ -1,0 +1,836 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap");
+
+:root {
+  --heb-red: #e4002b;
+  --heb-red-dark: #b8001f;
+  --ink: #1c1c1c;
+  --cream: #fff8f0;
+  --paper: #fffdf9;
+  --ticket: #fff3dc;
+  --ticket-edge: #f2dfb8;
+  --fresh-green: #2e8b47;
+  --muted: #8a8276;
+  --line: #e8ded0;
+  --shadow: rgba(28, 28, 28, 0.08);
+
+  --font-display: "Archivo Black", "Oswald", sans-serif;
+  --font-heading: "Oswald", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+/* ---------- Top bar ---------- */
+
+.topbar {
+  background: var(--heb-red);
+  color: white;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  color: white;
+}
+
+.topbar-brand .mark {
+  background: white;
+  color: var(--heb-red);
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.topbar-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.topbar-user button {
+  background: rgba(255, 255, 255, 0.16);
+  border: none;
+  color: white;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.15s ease;
+}
+
+.topbar-user button:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* ---------- Layout ---------- */
+
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 20px 120px;
+}
+
+.page-narrow {
+  max-width: 520px;
+}
+
+/* ---------- Landing / Home ---------- */
+
+.hero {
+  text-align: center;
+  padding: 48px 0 24px;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  line-height: 1.15;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+
+.hero h1 span {
+  color: var(--heb-red);
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.action-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+  margin-top: 32px;
+}
+
+@media (min-width: 640px) {
+  .action-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.action-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 1px 0 var(--shadow);
+}
+
+.action-card h3 {
+  font-family: var(--font-heading);
+  margin: 0;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.action-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  flex: 1;
+}
+
+.field-row {
+  display: flex;
+  gap: 8px;
+}
+
+input[type="text"],
+input[type="number"] {
+  font-family: var(--font-body);
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  background: white;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: var(--heb-red);
+}
+
+.btn {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 10px;
+  padding: 11px 18px;
+  background: var(--heb-red);
+  color: white;
+  transition: transform 0.08s ease, background 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background: var(--heb-red-dark);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn.secondary {
+  background: var(--ink);
+}
+
+.btn.secondary:hover {
+  background: #000;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--line);
+}
+
+.btn.ghost:hover {
+  background: var(--ticket);
+}
+
+.btn.small {
+  padding: 6px 12px;
+  font-size: 0.72rem;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------- Your lists ---------- */
+
+.section-title {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 32px 0 12px;
+}
+
+.list-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 0.15s ease, transform 0.08s ease;
+  cursor: pointer;
+}
+
+.list-row:hover {
+  border-color: var(--heb-red);
+  transform: translateY(-1px);
+}
+
+.list-row-name {
+  font-weight: 700;
+  font-size: 1.02rem;
+}
+
+.list-row-meta {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-top: 2px;
+}
+
+.status-pill {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--ticket);
+  color: var(--ink);
+}
+
+.status-pill.open {
+  background: #e6f4ea;
+  color: var(--fresh-green);
+}
+
+.status-pill.checked_out {
+  background: #f1e9f9;
+  color: #7a4fa3;
+}
+
+.status-pill.locked {
+  background: #fde7e7;
+  color: var(--heb-red-dark);
+}
+
+/* ---------- List header / presence ---------- */
+
+.list-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.list-title-block h1 {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  margin: 0 0 4px;
+}
+
+.invite-code {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.invite-code strong {
+  color: var(--ink);
+  background: var(--ticket);
+  border: 1px dashed var(--ticket-edge);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.presence-strip {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--heb-red);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  border: 2px solid var(--cream);
+  margin-left: -8px;
+  position: relative;
+}
+
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.avatar.online::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--fresh-green);
+  border: 2px solid var(--cream);
+}
+
+/* ---------- Tabs ---------- */
+
+.tabs {
+  display: flex;
+  gap: 6px;
+  margin: 20px 0 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.tab {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  background: none;
+  border: none;
+  padding: 10px 4px;
+  border-bottom: 3px solid transparent;
+  margin-right: 18px;
+}
+
+.tab.active {
+  color: var(--heb-red);
+  border-bottom-color: var(--heb-red);
+}
+
+/* ---------- Catalog grid ---------- */
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.product-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.product-emoji {
+  font-size: 1.9rem;
+}
+
+.product-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.25;
+  min-height: 2.5em;
+}
+
+.product-price {
+  font-family: var(--font-heading);
+  color: var(--heb-red);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.product-category {
+  font-size: 0.68rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ---------- Ticket / cart item cards (signature element) ---------- */
+
+.ticket {
+  position: relative;
+  background: var(--ticket);
+  border: 1px solid var(--ticket-edge);
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.ticket::before,
+.ticket::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: var(--cream);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ticket::before {
+  left: -9px;
+}
+
+.ticket::after {
+  right: -9px;
+}
+
+.ticket.in-cart {
+  background: #eaf6ee;
+  border-color: #cfe9d6;
+}
+
+.ticket.in-cart .ticket-name {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.ticket-check {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--ticket-edge);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: var(--fresh-green);
+  font-weight: 700;
+  flex: none;
+  padding: 0;
+}
+
+.ticket.in-cart .ticket-check {
+  background: var(--fresh-green);
+  border-color: var(--fresh-green);
+  color: white;
+}
+
+.ticket-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.ticket-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.ticket-meta {
+  font-size: 0.78rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ticket-meta .who {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ticket-price {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+
+.ticket-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.icon-btn {
+  border: none;
+  background: rgba(28, 28, 28, 0.06);
+  border-radius: 8px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  color: var(--ink);
+  transition: background 0.15s ease;
+}
+
+.icon-btn:hover {
+  background: rgba(28, 28, 28, 0.12);
+}
+
+.icon-btn.danger:hover {
+  background: #fde0e0;
+  color: var(--heb-red-dark);
+}
+
+/* ---------- Add item bar ---------- */
+
+.add-item-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.add-item-bar input {
+  flex: 1;
+}
+
+.add-item-bar input.price-input {
+  flex: 0 0 100px;
+}
+
+/* ---------- Empty state ---------- */
+
+.empty-state {
+  text-align: center;
+  padding: 48px 16px;
+  color: var(--muted);
+}
+
+.empty-state .big {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.empty-state h3 {
+  font-family: var(--font-heading);
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 4px;
+}
+
+/* ---------- Sticky cart bar ---------- */
+
+.cart-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--ink);
+  color: white;
+  padding: 14px 20px;
+  z-index: 40;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.cart-bar-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cart-bar-total {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+}
+
+.cart-bar-total .label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* ---------- Toast / live activity ---------- */
+
+.toast-stack {
+  position: fixed;
+  top: 72px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 50;
+  max-width: 280px;
+}
+
+.toast {
+  background: var(--ink);
+  color: white;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  box-shadow: 0 4px 12px var(--shadow);
+  animation: toast-in 0.2s ease;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ---------- Modal ---------- */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 28, 28, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+  padding: 16px;
+}
+
+.modal {
+  background: var(--paper);
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 480px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.modal h2 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin: 0 0 4px;
+}
+
+.modal p.sub {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 16px;
+}
+
+.bill-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.bill-row:last-child {
+  border-bottom: none;
+}
+
+.bill-row .name {
+  font-weight: 700;
+}
+
+.bill-row .sub-items {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.bill-row .amount {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--heb-red);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+/* ---------- Claims editor ---------- */
+
+.claims-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.claim-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+
+.claim-row input[type="number"] {
+  width: 70px;
+  text-align: right;
+}
+
+/* ---------- Misc ---------- */
+
+.muted {
+  color: var(--muted);
+}
+
+.center {
+  text-align: center;
+}
+
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
